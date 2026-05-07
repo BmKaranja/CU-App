@@ -9,11 +9,14 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shadowColor: Color(AppColors.secondary),
+      shadowColor: Color(AppColors.primary),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16)
       ),
@@ -27,6 +30,7 @@ class _LoginFormState extends State<LoginForm> {
               child: Column(
                 children: [
                   TextFormField(
+                    controller: emailController,
                     decoration: const InputDecoration(
                       icon: Icon(Icons.email),
                       iconColor: Color(AppColors.secondary),
@@ -36,6 +40,8 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
+                    controller: passwordController,
+                    obscureText: true,
                     decoration: const InputDecoration(
                       icon: Icon(Icons.lock),
                       iconColor: Color(AppColors.secondary),
@@ -46,9 +52,13 @@ class _LoginFormState extends State<LoginForm> {
                   const SizedBox(height: 24),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 48),
                       backgroundColor: Color(AppColors.primary),
                     ),
-                  onPressed: () {}, child: const Text('Login', style: TextStyle(color: Colors.black),)),
+                  onPressed: () {
+                    // Add your login logic here
+                    Navigator.pushNamed(context, '/homescreen');
+                  }, child: const Text('Login', style: TextStyle(color: Colors.black),)),
                 ],
               ),
             ),
