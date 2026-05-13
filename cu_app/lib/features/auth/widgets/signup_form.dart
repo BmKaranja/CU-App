@@ -86,7 +86,7 @@ class _SignupFormState extends State<SignupForm> {
                     ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/homescreen');
-                  }, child: const Text('SignUp', style: TextStyle(color: Colors.black),)),
+                  }, child: const Text('SignUp', style: TextStyle(color: Color(AppColors.onPrimary)),)),
             ],
           )),
       ),

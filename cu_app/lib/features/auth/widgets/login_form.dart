@@ -49,6 +49,7 @@ class _LoginFormState extends State<LoginForm> {
                       border: OutlineInputBorder(),
                     ),
                   ),
+                    TextButton(onPressed: (){}, child: Text('Forgot Password?', style: TextStyle(color: Color(AppColors.secondary)),textAlign: TextAlign.right,)),
                   const SizedBox(height: 24),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -58,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                   onPressed: () {
                     // Add your login logic here
                     Navigator.pushNamed(context, '/homescreen');
-                  }, child: const Text('Login', style: TextStyle(color: Colors.black),)),
+                  }, child: const Text('Login', style: TextStyle(color: Color(AppColors.onPrimary)),)),
                 ],
               ),
             ),

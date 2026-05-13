@@ -1,7 +1,9 @@
+import 'package:cu_app/core/providers/app_bar_provider.dart';
 import 'package:flutter/material.dart';
 
 class UoemcuAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const UoemcuAppBar({super.key});
+  final AppBarProvider appBarProvider;
+  const UoemcuAppBar({super.key, required this.appBarProvider  });
 
   @override
   State<UoemcuAppBar> createState() => _UoemcuAppBarState();
@@ -13,10 +15,14 @@ class UoemcuAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _UoemcuAppBarState extends State<UoemcuAppBar> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('UOEM CU'),
+    return AppBar(
+      title: Text(
+        widget.appBarProvider.title,
       ),
+      actions: widget.appBarProvider.actions  ,
+      backgroundColor: widget.appBarProvider.backgroundColor,
+      centerTitle: true,
+      elevation: 0,
     );
   }
 }
